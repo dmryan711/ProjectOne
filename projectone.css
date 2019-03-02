@@ -1,8 +1,5 @@
-#logo {
-    position: relative;
-    text-align: center;
-    left: 630px;
-    width: 270px;
+#userdata{
+  float: right;
 }
 
  body {
@@ -11,11 +8,14 @@
     background: black;
     text-align: center;
   }
-  
-  #gangoutlogin {
-      position: relative;
-      top: 30px;
+
+  .flex-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
   }
+ 
   input, textarea, select, label {
     font-family: inherit;
     font-size: 12px;
