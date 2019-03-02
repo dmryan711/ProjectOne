@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Create Gang</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="Basic-Styling.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1 class="text-center">Gang Out</h1>
+    </div>
+
+    <a href="Create-Group.html" class="btn btn-primary" >Create New Group</a>
+
+      <div class="card" id="userdata" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Franky Two Toes</p>
+        </div>
+      </div>
+    
+
+    <div class="row">
+      <div class="col-lg-6" id="Gang-Header">
+        <div class="card card-default">
+          <div class="card-header">
+            My Gangs
+          </div>
+          <div class="card" style="width: 100%">
+                <div class="card-body">
+                  <h5 class="card-title">Gang 1</h5>
+                  <p class="card-text">Placeholder Text!</p>
+                  <a href="#" class="btn btn-primary" id="userGroup1">Open Group</a>
+                </div>
+              </div>
+
+            <div class="card" style="width: 100%">
+                    <div class="card-body">
+                      <h5 class="card-title">Gang 2</h5>
+                      <p class="card-text">Placeholder Text!</p>
+                      <a href="#" class="btn btn-primary" id="userGroup2">Open Group</a>
+                    </div>
+                  </div>
+
+                  <div class="card" style="width: 100%">
+                        <div class="card-body">
+                          <h5 class="card-title">Gang 3</h5>
+                          <p class="card-text">Placeholder Text!</p>
+                          <a href="#" class="btn btn-primary" id="userGroup3">Open Group</a>
+                        </div>
+                      </div>
+
+                      <div class="card" style="width: 100%">
+                            <div class="card-body">
+                              <h5 class="card-title">Gang 4</h5>
+                              <p class="card-text">Placeholder Text!</p>
+                              <a href="#" class="btn btn-primary" id="userGroup4">Open Group</a>
+                            </div>
+                          </div>
+        </div>
+      </div>
+
+      <!-- Friends Card-->
+      <div class="col-lg-6">
+        <div class="card card-default">
+          <div class="card-header">
+            Public Groups
+          </div>
+          <div class="card" style="width: 100%">
+                <div class="card-body">
+                  <h5 class="card-title">Public Group 1</h5>
+                  <p class="card-text">Placeholder Text!</p>
+                  <a href="#" class="btn btn-primary" id="publicGroups1">Check these guys out</a>
+                </div>
+              </div>
+              <div class="card" style="width: 100%">
+                    <div class="card-body">
+                      <h5 class="card-title">Public Group 2</h5>
+                      <p class="card-text">Placeholder Text!</p>
+                      <a href="#" class="btn btn-primary" id="publicGroups2">Check these guys out</a>
+                    </div>
+                  </div>
+                  <div class="card" style="width: 100%">
+                        <div class="card-body">
+                          <h5 class="card-title">Public Group 3</h5>
+                          <p class="card-text">Placeholder Text!</p>
+                          <a href="#" class="btn btn-primary"id="publicGroups3">Check these guys out</a>
+                        </div>
+                      </div>
+                      <div class="card" style="width: 100%">
+                            <div class="card-body">
+                              <h5 class="card-title">Public Group 4</h5>
+                              <p class="card-text">Placeholder Text!</p>
+                              <a href="#" class="btn btn-primary"id="publicGroups4">Check these guys out</a>
+                            </div>
+                          </div>
+        </div>
+       
+      </div>
+      
+
+    </div>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="logic.js"></script>
+  <!-- Script -->
+  <script>
+    // Capture Button Click
+    $("#add-user").on("click", function(event) {
+      // prevent form from trying to submit/refresh the page
+      event.preventDefault();
+
+      // Capture User Inputs and store them into variables
+      var name = $("#name-input").val().trim();
+      var email = $("#email-input").val().trim();
+      var age = $("#age-input").val().trim();
+      var comment = $("#comment-input").val().trim();
+
+      // Console log each of the user inputs to confirm we are receiving them
+      console.log(name);
+      console.log(email);
+      console.log(age);
+      console.log(comment);
+
+      // Output all of the new information into the relevant HTML sections
+      $("#name-display").text(name);
+      $("#email-display").text(email);
+      $("#age-display").text(age);
+      $("#comment-display").text(comment);
+
+    });
+
+  </script>
+
+</body>
+
+</html>
