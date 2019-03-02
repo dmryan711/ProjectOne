@@ -2,11 +2,11 @@
   float: right;
 }
 
-
  body {
     font: 12px/20px 'Lucida Grande', Verdana, sans-serif;
     color: #404040;
     background: black;
+    text-align: center;
   }
 
   .flex-box{
@@ -23,7 +23,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  
+
   .card-body{
     background: #FFFF33;  
     color: black;
@@ -36,13 +36,33 @@
       font-size: 20px;
   }
 
-  .button{
-    color:#FFFF33; 
-  }
+#buttons{
+    color:white; 
+    border-radius: 20px;
+}
 
 
   #friends{
       color:black;
+  }
+
+  #search-bar{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 20px;
+  }
+
+  input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  input[type=text]:focus {
+    width: 100%;
   }
 
   .login {
@@ -99,6 +119,26 @@
   }
   
   .lt-ie9 .login-input { line-height: 35px; }
+
+  #save{
+    background: #FFFF33; 
+    position: relative;
+    text-align: center;
+    left: 530px;
+    width: 100px;
+  }
+
+  #logout{
+    background: #FFFF33; 
+    position: relative;
+    right: 650px;
+    width: 100px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 20px;
+  }
   
   .login-submit {
     display: block;
@@ -118,8 +158,13 @@
     cursor: pointer;
     background-image: -webkit-linear-gradient(top, black, black);
     background-image: -moz-linear-gradient(top, black, black);
-    background-image: -o-linear-gradient(top, black, black;
-  }
+    background-image: -o-linear-gradient(top, black, black);
+}
+
+#save{
+    border-radius: 20px;
+}
+
 =======
 #logo {
     position: relative;
