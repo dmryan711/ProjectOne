@@ -15,12 +15,13 @@
 <body>
 
   <div class="container">
+      <button type="button" class="btn btn-warning" id="logout-button">Logout</button>
 
     <div class="jumbotron">
       <h1 class="text-center">Gang Out</h1>
     </div>
 
-    <a href="Create-Group.html" class="btn btn-primary" >Create New Group</a>
+    <a href="Create-Group.html" class="btn btn-primary">Create New Group</a>
 
       <div class="card" id="userdata" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="profile pic">
@@ -113,8 +114,24 @@
 
   </div>
 
-  </script>
-
+  <!--FireBase Script, No Scripts before this-->       
+  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDrBXxGe_WLXw-VucpOf6z9aWRpNZWoPAg",
+      authDomain: "projectone-74ba1.firebaseapp.com",
+      databaseURL: "https://projectone-74ba1.firebaseio.com",
+      projectId: "projectone-74ba1",
+      storageBucket: "projectone-74ba1.appspot.com",
+      messagingSenderId: "143505066275"
+    };
+    firebase.initializeApp(config);
+  </script> 
+ <!--JQUERY--> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <!--APP SCRIPT-->
+  <script src="logic.js"></script>
 </body>
 
 </html>

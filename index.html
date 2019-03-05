@@ -7,23 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="projectone.css">
     
-    <script src="logic.js"></script>
+   
 </head>
 <body>
     <div class="flex-box">
         <img src="images/gangout.jpg" alt="gangout" id="logo"> 
     </div>
     <div class="flex-box">
-        <form class="login" onsubmit="window.location.href = 'Home-page.html'; return false" id="gangoutlogin">
+        <form class="login"  id="gangoutlogin">
             <h1>LOG IN</h1>
-            <input type="email" name="email" class="login-input" placeholder="Email Address" autofocus>
-            <input type="password" name="password" class="login-input" placeholder="Password">
-            <input type="submit" value="Login" class="login">
-            <p class="login-help"><a href="#">Forgot password?</a></p>
+            <input type="email" name="email" class="login-input" id="email-input" placeholder="Email Address" autofocus>
+            <input type="password" name="password" class="login-input" id="password-input" placeholder="Password">
+            <input type="submit" value="Login" class="login" id="login-button">
+            <input type="submit" value="Sign Up" class="login" id="signup-button">
+            <p class="login-help"><a href="#">Forgot Password</a></p>
         </form>
 
     </div>
-            
-    
+     <!--FireBase Script, No Scripts before this-->       
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDrBXxGe_WLXw-VucpOf6z9aWRpNZWoPAg",
+        authDomain: "projectone-74ba1.firebaseapp.com",
+        databaseURL: "https://projectone-74ba1.firebaseio.com",
+        projectId: "projectone-74ba1",
+        storageBucket: "projectone-74ba1.appspot.com",
+        messagingSenderId: "143505066275"
+      };
+      firebase.initializeApp(config);
+    </script> 
+    <!--JQUERY--> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--APP SCRIPT-->
+     <script src="logic.js"></script>
 </body>
 </html>
