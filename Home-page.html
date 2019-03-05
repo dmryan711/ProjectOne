@@ -1,18 +1,38 @@
 <!DOCTYPE html>
-
 <html lang="en-us">
-
 <head>
-
   <meta charset="UTF-8">
-  <title>Create Gang</title>
-
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>Home Page</title>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!--Google Font #1-->
+  <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+<!--Google Font #2-->
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<!--External CSS Stylesheet-->
   <link rel="stylesheet" type="text/css" href="projectone.css">
 </head>
-
 <body>
+<<<<<<< HEAD
+<!--Page Container-->
+<div class="container" id="home-page">
+<!--Log Out Button-->
+  <a href="index.html" class="btn btn-warning" id="logout-button">Logout</a>
+<!--Profile Pic-->
+      <a href="..."> <img src="https://cdn-images-1.medium.com/max/1200/1*MccriYX-ciBniUzRKAUsAw.png" alt="Profile Pic" id="profile-pic">
+      </a>
+<!--Logo Container-->
+  <div class="logo-container">
+    <img src="images/gangout.jpg" alt="gangout" class="center">
+  </div>
+  <br/>
+<!--Creat New Group Button-->
+  <a href="#" class="btn btn-warning" id="home-page-create-gang-button" data-toggle="modal" data-target="#create-gang-modal">Create New Gang</a>
+  <br/>
+<!--Search Bar-->
+  <input type="text" name="search" placeholder="Search Gangs..." id="search-bar">
+<!--My Gang Cards-->
+=======
 
   <div class="container">
       <button type="button" class="btn btn-warning" id="logout-button">Logout</button>
@@ -31,6 +51,7 @@
       </div>
     
 
+>>>>>>> master
     <div class="row">
       <div class="col-lg-6" id="Gang-Header">
         <div class="card card-default">
@@ -38,81 +59,162 @@
             My Gangs
           </div>
           <div class="card" style="width: 100%">
-                <div class="card-body">
-                  <h5 class="card-title">Gang 1</h5>
-                  <p class="card-text">Placeholder Text!</p>
-                  <a href="#" class="btn btn-primary" id="userGroup1">Open Group</a>
-                </div>
-              </div>
-
-            <div class="card" style="width: 100%">
-                    <div class="card-body">
-                      <h5 class="card-title">Gang 2</h5>
-                      <p class="card-text">Placeholder Text!</p>
-                      <a href="#" class="btn btn-primary" id="userGroup2">Open Group</a>
-                    </div>
-                  </div>
-
-                  <div class="card" style="width: 100%">
-                        <div class="card-body">
-                          <h5 class="card-title">Gang 3</h5>
-                          <p class="card-text">Placeholder Text!</p>
-                          <a href="#" class="btn btn-primary" id="userGroup3">Open Group</a>
-                        </div>
-                      </div>
-
-                      <div class="card" style="width: 100%">
-                            <div class="card-body">
-                              <h5 class="card-title">Gang 4</h5>
-                              <p class="card-text">Placeholder Text!</p>
-                              <a href="#" class="btn btn-primary" id="userGroup4">Open Group</a>
-                            </div>
-                          </div>
+            <div class="card-body">
+              <h5 class="card-title">${Gang 1}</h5>
+              <a href="#" class="btn btn-dark" id="user-gang-button" data-toggle="modal" data-target="#edit-gang-modal">Open Gang</a>
+            </div>
+          </div>
+          <div class="card" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title">${Gang 2}</h5>
+              <a href="#" class="btn btn-dark" id="user-gang-button" data-toggle="modal" data-target="#edit-gang-modal">Open Gang</a>
+            </div>
+          </div>
+          <div class="card" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title">${Gang 3}</h5>
+              <a href="#" class="btn btn-dark" id="user-gang-button" data-toggle="modal" data-target="#edit-gang-modal">Open Gang</a>
+            </div>
+          </div>
+          <div class="card" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title">${Gang 4}</h5>
+              <a href="#" class="btn btn-dark" id="user-gang-button" data-toggle="modal" data-target="#edit-gang-modal">Open Gang</a>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- Friends Card-->
+<!-- Public Gang Cards-->
       <div class="col-lg-6">
         <div class="card card-default">
           <div class="card-header">
-            Public Groups
+            Public Gangs
           </div>
           <div class="card" style="width: 100%">
-                <div class="card-body">
-                  <h5 class="card-title">Public Group 1</h5>
-                  <p class="card-text">Placeholder Text!</p>
-                  <a href="#" class="btn btn-primary" id="publicGroups1">Check these guys out</a>
-                </div>
-              </div>
-              <div class="card" style="width: 100%">
-                    <div class="card-body">
-                      <h5 class="card-title">Public Group 2</h5>
-                      <p class="card-text">Placeholder Text!</p>
-                      <a href="#" class="btn btn-primary" id="publicGroups2">Check these guys out</a>
-                    </div>
-                  </div>
-                  <div class="card" style="width: 100%">
-                        <div class="card-body">
-                          <h5 class="card-title">Public Group 3</h5>
-                          <p class="card-text">Placeholder Text!</p>
-                          <a href="#" class="btn btn-primary"id="publicGroups3">Check these guys out</a>
-                        </div>
-                      </div>
-                      <div class="card" style="width: 100%">
-                            <div class="card-body">
-                              <h5 class="card-title">Public Group 4</h5>
-                              <p class="card-text">Placeholder Text!</p>
-                              <a href="#" class="btn btn-primary"id="publicGroups4">Check these guys out</a>
-                            </div>
-                          </div>
+            <div class="card-body">
+              <h5 class="card-title">${Public Gang 1}</h5>
+              <a href="#" class="btn btn-dark" id="public-group-button" data-toggle="modal" data-target="#public-gang-modal">Check Out Gang</a>
+            </div>
+          </div>
+          <div class="card" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title">${Public Gang 2}</h5>
+              <a href="#" class="btn btn-dark" id="public-group-button" data-toggle="modal" data-target="#public-gang-modal">Check Out Gang</a>
+            </div>
+          </div>
+          <div class="card" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title">${Public Gang 3}</h5>
+              <a href="#" class="btn btn-dark"id="public-group-button" data-toggle="modal" data-target="#public-gang-modal">Check Out Gang</a>
+            </div>
+          </div>
+          <div class="card" style="width: 100%">
+            <div class="card-body">
+              <h5 class="card-title">${Public Gang 4}</h5>
+              <a href="#" class="btn btn-dark"id="public-group-button" data-toggle="modal" data-target="#public-gang-modal">Check Out Gang</a>
+            </div>
+          </div>
         </div>
-       
       </div>
-      
-
     </div>
-
   </div>
+<!--Creat Gang Modal-->
+<div class="modal fade" id="create-gang-modal" tabindex="-1" role="dialog" aria-labelledby="create-gang-modal" aria-hidden="true">
+  <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+    <div class="modal-content" id="create-gang-modal-conten">
+      <div class="modal-header" id="create-gang-modal-header">
+        <img src="https://cdn-images-1.medium.com/max/1200/1*MccriYX-ciBniUzRKAUsAw.png" alt="avatar" class="rounded-circle img-responsive">
+      </div>
+      <div class="modal-body text-center mb-1" id="create-gang-modal-body">
+        <h5 class="mt-1 mb-2">${Username}</h5>
+        <br/>
+          <div class="md-form ml-0 mr-0">
+            <label data-error="wrong" data-success="right" for="form29" class="ml-0">Enter Gang Name</label>
+            <input type="text" name="search" placeholder="" id="search-bar">
+          </div>
+          <div class="text-center mt-4" id="create-gang-modal-text">
+            <a href="Create-Group.html" class="btn btn-cyan mt-1" id="create-gang-modal-button">Create New Gang <i class="fas fa-sign-in ml-1"></i></a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Edit Gang Modal-->
+<div class="modal hide fade" id="edit-gang-modal" tabindex="-1" role="dialog" aria-labelledby="edit-gang-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" id="edit-gang-modal-content">
+        <div class="modal-header" id="edit-gang-modal-header">
+          <h5 class="modal-title" id="edit-gang-modal-label">${Gang Name}</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" id="edit-gang-modal-body">
+          <button href="#edit-gang-remove-friend-modal" type="button" class="btn" id="edit-gang-modal-friend-button" data-toggle="modal" data-dismiss="modal">${Friend1}</button>
+          <br/>
+          <br/>
+          <button href="#edit-gang-remove-friend-modal" type="button" class="btn" id="edit-gang-modal-friend-button" data-toggle="modal" data-dismiss="modal">${Friend2}</button>
+          <br/>
+          <br/>
+          <button href="#edit-gang-remove-friend-modal" type="button" class="btn" id="edit-gang-modal-friend-button" data-toggle="modal" data-dismiss="modal">${Friend3}</button>
+          <br/>
+          <br/>
+          <button href="#edit-gang-remove-friend-modal" type="button" class="btn" id="edit-gang-modal-friend-button" data-toggle="modal" data-dismiss="modal">${Friend4}</button>
+        </div>
+        <div class="modal-footer" id="edit-gang-modal-footer">
+          <button type="button" class="btn" id="edit-gang-modal-close-button" data-dismiss="modal">Create Event</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Remove Friend Modal-->
+<div class="modal fade" id="edit-gang-remove-friend-modal" tabindex="-1" role="dialog" aria-labelledby="edit-gang-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" id="edit-gang-remove-friend-modal-content">
+        <div class="modal-header" id="edit-gang-remove-friend-modal-header">
+          <h5 class="modal-title" id="edit-gang-remove-friend-modal-label">Dismiss Member</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="edit-gang-remove-friend-modal-body">
+          <h1>Dismiss ${Friend} from ${Gang}?</h1>
+        </div>
+        <div class="modal-footer" id="edit-gang-remove-friend-modal-footer">
+          <button type="button" class="btn" id="edit-gang-remove-friend-modal-dismiss-button">Dismiss</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--Public Gang Modal-->
+<div class="modal hide fade" id="public-gang-modal" tabindex="-1" role="dialog" aria-labelledby="edit-gang-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" id="public-gang-modal-content">
+        <div class="modal-header" id="public-gang-modal-header">
+          <h5 class="modal-title" id="public-gang-modal-label">${Public Gang Name}</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" id="edit-gang-modal-body">
+          <button href="#edit-gang-remove-friend-modal" type="button" class="btn" id="public-gang-modal-friend-button">${Friend1}</button>
+          <br/>
+          <br/>
+          <button href="#edit-gang-remove-friend-modal" type="button" class="btn" id="public-gang-modal-friend-button">${Friend2}</button>
+          <br/>
+          <br/>
+          <button href="#edit-gang-remove-friend-modal" type="button" class="btn" id="public-gang-modal-friend-button">${Friend3}</button>
+          <br/>
+          <br/>
+          <button href="#edit-gang-remove-friend-modal" type="button" class="btn" id="public-gang-modal-friend-button">${Friend4}</button>
+        </div>
+        <div class="modal-footer" id="public-gang-modal-footer">
+          <button type="button" class="btn" id="public-gang-modal-close-button" data-dismiss="modal">Check Out Event</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<<<<<<< HEAD
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+=======
 
   <!--FireBase Script, No Scripts before this-->       
   <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
@@ -132,6 +234,6 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <!--APP SCRIPT-->
   <script src="logic.js"></script>
+>>>>>>> master
 </body>
-
 </html>
