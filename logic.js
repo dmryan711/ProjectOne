@@ -1,26 +1,63 @@
+
+console.log(document.URL);
 //Firebase
- // Initialize Firebase
- var config = {
-  apiKey: "AIzaSyDrBXxGe_WLXw-VucpOf6z9aWRpNZWoPAg",
-  authDomain: "projectone-74ba1.firebaseapp.com",
-  databaseURL: "https://projectone-74ba1.firebaseio.com",
-  projectId: "projectone-74ba1",
-  storageBucket: "projectone-74ba1.appspot.com",
-  messagingSenderId: "143505066275"
-};
-firebase.initializeApp(config);
-
-
-
-
-
+//Handle Account Status
+firebase.auth().onAuthStateChanged(user => {
+  if(user){
+    if(window.location.href.indexOf("index.html") > -1) {
+      window.location = 'Home-page.html'; //After successful login, user will be redirected to Home-page.html
+   }
+  }else{
+    if(window.location.href.indexOf("index.html")>-1){
+      console.log("do nothing");
+    }else{
+      window.location = 'index.html'; //After user is cleared , user will be redirected to index.html
+    }
+    
+  }
+});
 //Home-page START
 var groupID;
 
-$( document ).ready(function() {
-    //Login Start
-  $('#login-button').on("click",function(){
+$(document).ready(function() {
+  //Login Start
+  $('#signup-button').on("click",function(e){
+    e.preventDefault();
+    console.log("Sign Up");
+      var email = $('#email-input').val();
+      var password = $('#password-input').val();
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Sign UpErrors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorMessage);  
+    });
+  });
+
+  $('#login-button').on("click",function(e){
+    e.preventDefault();
     console.log("Login Button");
+    var email = $('#email-input').val();
+    var password = $('#password-input').val();
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Log In Errors here.
+      if(error){
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage);
+        //User does not have an account, create one for them
+      }
+    });
+  });
+
+  $('#logout-button').on("click",function(){
+    console.log("Sign Out");
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+      console.log("Sign Out Successful");
+    }).catch(function(error) {
+      // An error happened.
+    });
   });
     $('#userGroup1').on("click", function(){
       var $userGroup = $('#userGroup1');
