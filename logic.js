@@ -1,12 +1,38 @@
 
-console.log(document.URL);
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDrBXxGe_WLXw-VucpOf6z9aWRpNZWoPAg",
+  authDomain: "projectone-74ba1.firebaseapp.com",
+  databaseURL: "https://projectone-74ba1.firebaseio.com",
+  projectId: "projectone-74ba1",
+  storageBucket: "projectone-74ba1.appspot.com",
+  messagingSenderId: "143505066275"
+};
+firebase.initializeApp(config);
+const database = firebase.database();
+const GANGS = 'Gangs';
+
+
+
+
+
+
 //Firebase
 //Handle Account Status
 firebase.auth().onAuthStateChanged(user => {
   if(user){
-    if(window.location.href.indexOf("index.html") > -1) {
+    //Set up UI
+    console.log(user.email);
+   
+
+    if(window.location.href.indexOf("index.html") > -1){
       window.location = 'Home-page.html'; //After successful login, user will be redirected to Home-page.html
-   }
+    }else if(window.location.href.indexOf("Home-page.html") > -1){
+      console.log("Here is the user name" +firebase.auth().currentUser.displayName)
+        populateUserUI(firebase.auth().currentUser.displayName);
+    }else if(window.location.href.indexOf("Create-Group.html") > -1){
+        populateGangUI(firebase.auth().currentUser.displayName);
+    }
   }else{
     if(window.location.href.indexOf("index.html")>-1){
       console.log("do nothing");
@@ -20,19 +46,19 @@ firebase.auth().onAuthStateChanged(user => {
 var groupID;
 
 $(document).ready(function() {
-  //Login Start
-  $('#signup-button').on("click",function(e){
-    e.preventDefault();
-    console.log("Sign Up");
-      var email = $('#email-input').val();
-      var password = $('#password-input').val();
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-      // Handle Sign UpErrors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(errorMessage);  
-    });
-  });
+//Login Start
+   $('#signup-button').on("click",function(e){
+     e.preventDefault();
+     var email = $('#email-input').val();
+     var password = $('#password-input').val();
+     var userName = $('#user-name-input').val();
+     if(userName != ""){
+      createGangOutUser(email,userName,password);
+     }else{
+       console.log("Enter a user name");
+     } 
+   });
+
 
   $('#login-button').on("click",function(e){
     e.preventDefault();
@@ -52,6 +78,7 @@ $(document).ready(function() {
 
   $('#logout-button').on("click",function(){
     console.log("Sign Out");
+
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
       console.log("Sign Out Successful");
@@ -59,6 +86,36 @@ $(document).ready(function() {
       // An error happened.
     });
   });
+ 
+  $('#create-gang-modal-button').on("click",function(){
+    var $modalTextElement = $('#search-bar-modal');
+    if(!$.trim( $($modalTextElement).val()).length){ // Test if something is in modal Text
+       //Nothing is in modal text
+       console.log("Nothing is here");
+
+    }else{
+      console.log("Something is here");
+      //Transition with group name
+
+      
+      
+      window.location = "Create-Group.html";
+      localStorage.setItem('gangName',$modalTextElement.val());
+      
+     
+     
+
+     
+      
+    }
+  });
+
+//CREATE GANG PAGE
+ $("#gang-name").text(localStorage.getItem('gangName'));
+ $("#gang-owner-name").text("Gang Founder "+ localStorage.getItem('userName'));
+
+  
+
     $('#userGroup1').on("click", function(){
       var $userGroup = $('#userGroup1');
       groupID = $userGroup.attr('id');
@@ -96,3 +153,51 @@ $(document).ready(function() {
 
 });
 //Landing-page END
+
+
+function createGangWithName(gangNameString){
+
+  var gangsKey =  database.ref().child(GANGS).push().key;
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/'+GANGS+'/'+gangsKey] = {
+    name: gangNameString,
+    members: ["Peter","John"]
+  };
+}
+
+
+ function createGangOutUser(email,displayName,password){
+    var user = null;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(function () {
+      user = firebase.auth().currentUser;
+    })
+    .then(function () {
+      user.updateProfile({
+        displayName: displayName
+      });
+    })
+    .catch(function(error) {
+      console.log(error.message);
+    });
+   // console.log('Validation link was sent to ' + email + '.');
+  }
+
+  function populateUserUI(userName){
+    $('#create-gang-user-name').text(userName);
+  }
+
+  function populateGangUI(userName){
+    $("#gang-owner-name").text("Gang Founder "+ userName);
+  }
+
+ // console.log(gangsKey);
+// // Create a new ref and log it’s push key
+// var userRef = usersRef.push();
+// console.log(‘user key’, userRef.key);
+// // Create a new ref and save data to it in one step
+// var userRef = usersRef.push({
+//  name: ‘Christopher’,
+//  description: ‘I eat too much ice cream’
+// });
