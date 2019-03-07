@@ -10,7 +10,6 @@ var config = {
 };
 firebase.initializeApp(config);
 const database = firebase.database();
-var userName;
 const GANGS = 'Gangs';
 
 
@@ -24,12 +23,16 @@ firebase.auth().onAuthStateChanged(user => {
   if(user){
     //Set up UI
     console.log(user.email);
-    localStorage.setItem("userName",user.email);
-    $('#create-gang-user-name').text(user.email);
+   
 
-    if(window.location.href.indexOf("index.html") > -1) {
+    if(window.location.href.indexOf("index.html") > -1){
       window.location = 'Home-page.html'; //After successful login, user will be redirected to Home-page.html
-   }
+    }else if(window.location.href.indexOf("Home-page.html") > -1){
+      console.log("Here is the user name" +firebase.auth().currentUser.displayName)
+        populateUserUI(firebase.auth().currentUser.displayName);
+    }else if(window.location.href.indexOf("Create-Group.html") > -1){
+        populateGangUI(firebase.auth().currentUser.displayName);
+    }
   }else{
     if(window.location.href.indexOf("index.html")>-1){
       console.log("do nothing");
@@ -43,19 +46,19 @@ firebase.auth().onAuthStateChanged(user => {
 var groupID;
 
 $(document).ready(function() {
-  //Login Start
-  $('#signup-button').on("click",function(e){
-    e.preventDefault();
-    console.log("Sign Up");
-      var email = $('#email-input').val();
-      var password = $('#password-input').val();
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-      // Handle Sign UpErrors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(errorMessage);  
-    });
-  });
+//Login Start
+   $('#signup-button').on("click",function(e){
+     e.preventDefault();
+     var email = $('#email-input').val();
+     var password = $('#password-input').val();
+     var userName = $('#user-name-input').val();
+     if(userName != ""){
+      createGangOutUser(email,userName,password);
+     }else{
+       console.log("Enter a user name");
+     } 
+   });
+
 
   $('#login-button').on("click",function(e){
     e.preventDefault();
@@ -75,6 +78,7 @@ $(document).ready(function() {
 
   $('#logout-button').on("click",function(){
     console.log("Sign Out");
+
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
       console.log("Sign Out Successful");
@@ -160,11 +164,33 @@ function createGangWithName(gangNameString){
     name: gangNameString,
     members: ["Peter","John"]
   };
+}
 
 
-  firebase.database().ref().update(updates);
+ function createGangOutUser(email,displayName,password){
+    var user = null;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(function () {
+      user = firebase.auth().currentUser;
+    })
+    .then(function () {
+      user.updateProfile({
+        displayName: displayName
+      });
+    })
+    .catch(function(error) {
+      console.log(error.message);
+    });
+   // console.log('Validation link was sent to ' + email + '.');
+  }
 
-  
+  function populateUserUI(userName){
+    $('#create-gang-user-name').text(userName);
+  }
+
+  function populateGangUI(userName){
+    $("#gang-owner-name").text("Gang Founder "+ userName);
+  }
 
  // console.log(gangsKey);
 // // Create a new ref and log it’s push key
@@ -175,4 +201,3 @@ function createGangWithName(gangNameString){
 //  name: ‘Christopher’,
 //  description: ‘I eat too much ice cream’
 // });
-}
