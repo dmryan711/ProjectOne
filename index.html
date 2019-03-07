@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <head>
      <!--FireBase Script, No Scripts before this-->       
      <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
@@ -12,19 +13,32 @@
    
 </head>
 <body>
+=======
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!--Google Font #1-->
+        <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+        <!--Google Font #2-->
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="projectone.css">
+        <title>GANGOUT</title>
+    </head>
+    <body id="login-body">
+>>>>>>> master
     <div class="flex-box">
-        <img src="images/gangout.jpg" alt="gangout" id="logo"> 
+            <img src="images/gangout.jpg" alt="gangout" id="logo"> 
     </div>
     <div class="flex-box">
-        <form class="login"  id="gangoutlogin">
+        <form class="login" onsubmit="window.location.href = 'Home-page.html'; return false" id="gangoutlogin">
             <h1>LOG IN</h1>
-            <input type="email" name="email" class="login-input" id="email-input" placeholder="Email Address" autofocus>
-            <input type="password" name="password" class="login-input" id="password-input" placeholder="Password">
-            <input type="submit" value="Login" class="login" id="login-button">
-            <input type="submit" value="Sign Up" class="login" id="signup-button">
-            <p class="login-help"><a href="#">Forgot Password</a></p>
+            <input type="email" name="email" class="login-input" placeholder="EMAIL ADDRESS" autofocus>
+            <input type="password" name="password" class="login-input" placeholder="PASSWORD">
+            <input type="submit" value="LOGIN" class="login" id="login-button">
+            <input type="submit" value="SIGNUP" class="login" id="signup-button">
+            <p class="login-help"><a href="#">FORGOT PASSWORD?</a></p>
         </form>
-
     </div>
     
     <!-- <script>
