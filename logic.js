@@ -1,9 +1,32 @@
 
-console.log(document.URL);
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDrBXxGe_WLXw-VucpOf6z9aWRpNZWoPAg",
+  authDomain: "projectone-74ba1.firebaseapp.com",
+  databaseURL: "https://projectone-74ba1.firebaseio.com",
+  projectId: "projectone-74ba1",
+  storageBucket: "projectone-74ba1.appspot.com",
+  messagingSenderId: "143505066275"
+};
+firebase.initializeApp(config);
+const database = firebase.database();
+var userName;
+const GANGS = 'Gangs';
+
+
+
+
+
+
 //Firebase
 //Handle Account Status
 firebase.auth().onAuthStateChanged(user => {
   if(user){
+    //Set up UI
+    console.log(user.email);
+    localStorage.setItem("userName",user.email);
+    $('#create-gang-user-name').text(user.email);
+
     if(window.location.href.indexOf("index.html") > -1) {
       window.location = 'Home-page.html'; //After successful login, user will be redirected to Home-page.html
    }
@@ -59,6 +82,36 @@ $(document).ready(function() {
       // An error happened.
     });
   });
+ 
+  $('#create-gang-modal-button').on("click",function(){
+    var $modalTextElement = $('#search-bar-modal');
+    if(!$.trim( $($modalTextElement).val()).length){ // Test if something is in modal Text
+       //Nothing is in modal text
+       console.log("Nothing is here");
+
+    }else{
+      console.log("Something is here");
+      //Transition with group name
+
+      
+      
+      window.location = "Create-Group.html";
+      localStorage.setItem('gangName',$modalTextElement.val());
+      
+     
+     
+
+     
+      
+    }
+  });
+
+//CREATE GANG PAGE
+ $("#gang-name").text(localStorage.getItem('gangName'));
+ $("#gang-owner-name").text("Gang Founder "+ localStorage.getItem('userName'));
+
+  
+
     $('#userGroup1').on("click", function(){
       var $userGroup = $('#userGroup1');
       groupID = $userGroup.attr('id');
@@ -96,3 +149,30 @@ $(document).ready(function() {
 
 });
 //Landing-page END
+
+
+function createGangWithName(gangNameString){
+
+  var gangsKey =  database.ref().child(GANGS).push().key;
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/'+GANGS+'/'+gangsKey] = {
+    name: gangNameString,
+    members: ["Peter","John"]
+  };
+
+
+  firebase.database().ref().update(updates);
+
+  
+
+ // console.log(gangsKey);
+// // Create a new ref and log it’s push key
+// var userRef = usersRef.push();
+// console.log(‘user key’, userRef.key);
+// // Create a new ref and save data to it in one step
+// var userRef = usersRef.push({
+//  name: ‘Christopher’,
+//  description: ‘I eat too much ice cream’
+// });
+}
