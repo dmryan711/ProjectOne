@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Create Event</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--Google Font #1-->
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+    <!--Google Font #2-->
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <!--External CSS Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="projectone.css">
+</head>
+<body>
+    <!--Page Container-->
+    <div class="container-fluid" id="create-event-page">
+    <!--Log Out Button-->
+    <a href="index.html" class="btn btn-warning" id="logout-button">Logout</a>
+    <!--Logo Container-->
+    <div class="logo-container" id="create-event-logo-container">
+        <img src="images/gangout.jpg" alt="gangout" class="center">
+    </div>
+    <!--Gang Name & Owner-->
+    <span id="gang-name">${Gang Name}</span>
+    <br/>
+    <span id="gang-owner-name">${Gang Founder}</span>
+    <br/>√
+    <!--Search Bar-->
+    <input type="text" name="search" placeholder="Search Events..." id="search-bar">
+    <div class="month">      
+        <ul>
+            <li class="prev">&#10094;</li>
+            <li class="next">&#10095;</li>
+            <li>
+            March
+            <br>
+            <span style="font-size:18px" id="calendar-year">2019</span>
+            </li>
+        </ul>
+    </div>
+        <ul class="weekdays">
+            <li>S</li>
+            <li>M</li>
+            <li>T</li>
+            <li>W</li>
+            <li>T</li>
+            <li>F</li>
+            <li>S</li>
+        </ul>
+        <ul class="days"> 
+            <li> </li> 
+            <li> </li> 
+            <li> </li> 
+            <li> </li> 
+            <li> </li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">1</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">2</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">3</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">4</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">5</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">6</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">7</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">8</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">9</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">10</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">11</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">12</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">13</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">14</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">15</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">16</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">17</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">18</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">19</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">20</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">21</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">22</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">23</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">24</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">25</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">26</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">27</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">28</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">29</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">30</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#calendar-event-modal">31</a></li>
+        </ul>
+        <br/>
+        <div class="col-lg-12">
+            <div class="card card-default">
+                <div class="card-header">
+                    Public Events
+                </div>
+                <div class="card" style="width: 100%">
+                    <div class="card-body">
+                        <h5 class="card-title">${Public Event 1}</h5>
+                        <a href="#" class="btn btn-dark" id="public-group-button" data-toggle="modal" data-target="#public-gang-modal">Check Out Gang</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 100%">
+                    <div class="card-body">
+                        <h5 class="card-title">${Public Event 2}</h5>
+                        <a href="#" class="btn btn-dark" id="public-group-button" data-toggle="modal" data-target="#public-gang-modal">Check Out Gang</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 100%">
+                    <div class="card-body">
+                        <h5 class="card-title">${Public Event 3}</h5>
+                        <a href="#" class="btn btn-dark"id="public-group-button" data-toggle="modal" data-target="#public-gang-modal">Check Out Gang</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 100%">
+                    <div class="card-body">
+                        <h5 class="card-title">${Public Event 4}</h5>
+                        <a href="#" class="btn btn-dark"id="public-group-button" data-toggle="modal" data-target="#public-gang-modal">Check Out Gang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+            <h1 id="suggestion-header">WHAT'S GOING ON TONIGHT?</h1>
+        <br/>
+        <br/>
+        <div class="col-lg-12">
+            <div id="card-header">
+                <h3>🎥Warwick Drive-In Theater</h3>
+                <ul>
+                    <li>Open at 7:00pm to 2:00am</li>
+                    <li>Phone: (845) 986-4440</li>
+                    <li>Address: 5 Warwick Turnpike, Warwick, NY 10990</li>
+                </ul>
+                <p><strong>Old-school, cash-only drive-in theater showing current popular films on 3 screens.</strong></p>
+                <p><a href="https://www.google.com">Learn more...</a></p>
+            </div>
+        </div>
+    </div>
+<!--Calendar Event Modal-->
+    <div class="modal hide fade" id="calendar-event-modal" tabindex="-1" role="dialog" aria-labelledby="edit-gang-modal-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="calendar-event-modal-content">
+                <div class="modal-header" id="calendar-event-modal-header">
+                    <h5 class="modal-title" id="calendar-event-modal-label">${Gang Name}</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" id="calendar-event-modal-body">
+                    <button href="#create-event-modal" type="button" class="btn" id="edit-gang-modal-friend-button" data-toggle="modal" data-dismiss="modal">${RECOMMENDED EVENT 1}</button>
+                    <br/>
+                    <br/>
+                    <button href="#create-event-modal" type="button" class="btn" id="edit-gang-modal-friend-button" data-toggle="modal" data-dismiss="modal">${RECOMMENDED EVENT 2}</button>
+                    <br/>
+                    <br/>
+                    <button href="#create-event-modal" type="button" class="btn" id="edit-gang-modal-friend-button" data-toggle="modal" data-dismiss="modal">${RECOMMENDED EVENT 3}</button>
+                    <br/>
+                    <br/>
+                    <button href="#create-event-modal" type="button" class="btn" id="edit-gang-modal-friend-button" data-toggle="modal" data-dismiss="modal">${RECOMMENDED EVENT 4}</button>
+                </div>
+                <div class="modal-footer" id="edit-gang-modal-footer">
+                    <button type="button" class="btn" id="edit-gang-modal-close-button" data-dismiss="modal">GO TO EVENTS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Create Event Modal-->
+    <div class="modal hide fade" id="create-event-modal" tabindex="-1" role="dialog" aria-labelledby="edit-gang-modal-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="calendar-event-modal-content">
+                <div class="modal-header" id="calendar-event-modal-header">
+                    <h5 class="modal-title" id="calendar-event-modal-label">CREATE EVENT</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" id="calendar-event-modal-body">
+                    <h5>CREATE EVENT ON THIS DAY?</h5>
+                </div>
+                <div class="modal-footer" id="edit-gang-modal-footer">
+                    <button href="#voting-modal" type="button" class="btn" id="edit-gang-modal-friend-button" data-toggle="modal" data-dismiss="modal">Create Event</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Cofirm Vote Modal-->
+    <div class="modal hide fade" id="voting-modal" tabindex="-1" role="dialog" aria-labelledby="edit-gang-modal-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="calendar-event-modal-content">
+                <div class="modal-header" id="calendar-event-modal-header">
+                    <h5 class="modal-title" id="calendar-event-modal-label">Vote</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" id="calendar-event-modal-body">
+                    <h5>SEND OUT VOTE TO ${GANG NAME} FOR THIS EVENT?</h5>
+                </div>
+                <div class="modal-footer" id="edit-gang-modal-footer">
+                    <button href="#contact" type="button" class="btn" id="edit-gang-modal-friend-button" data-toggle="modal" data-dismiss="modal">SEND!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--Voting UI-->
+    <div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="panel-title" id="contactLabel"><span class="glyphicon glyphicon-info-sign"></span>Vote</h4>
+                </div>
+                    <form action="#" method="post" accept-charset="utf-8">
+                <div class="modal-body" style="padding: 5px;">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <textarea style="resize:vertical;" class="form-control" placeholder="Message..." rows="6" name="comment" required></textarea>
+                        </div>
+                    </div>
+                </div>  
+                <div class="panel-footer" style="margin-bottom:-14px;">
+                    <input type="submit" class="btn btn-success" value="I'M IN!"/>
+                    <!--<span class="glyphicon glyphicon-ok"></span>-->
+                    <input type="submit" class="btn btn-danger" value="I'M OUT!" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="vote" tabindex="-1" role="dialog" aria-labelledby="voteLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="panel-title" id="voteLabel"><span class="glyphicon glyphicon-arrow-right"></span> How is My Site?</h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios">
+                                    Excellent
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios">
+                                    Good
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios">
+                                    Can Be Improved
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios">
+                                    Bad
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios">
+                                    No Comment
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success btn-vote">Vote!</button>
+                    <span class="btn btn-primary dropdown-results btn-results" data-for=".results">View Results</span>
+                    <button type="button" class="btn btn-default btn-close" data-dismiss="modal">Close</button>
+                </div>
+                <div class="row vote-results results">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-left: 5px;">
+                        Excellent
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                <span class="sr-only">40% Excellent (success)</span>
+                            </div>
+                        </div>
+                        Good
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                <span class="sr-only">20% Good (primary)</span>
+                            </div>
+                        </div>
+                        Can Be Improved
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
+                                <span class="sr-only">60% Can Be Improved (warning)</span>
+                            </div>
+                        </div>
+                        bad
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                                <span class="sr-only">80% Bad (danger)</span>
+                            </div>
+                        </div>
+                        No Comment
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
+                                <span class="sr-only">80% No Comment (info)</span>
+                            </div>
+                        </div>
+                        Overall
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" style="width: 20%">
+                                <span class="sr-only">35% Complete (success)</span>
+                            </div>
+                            <div class="progress-bar progress-bar-primary" style="width: 40%">
+                                <span class="sr-only">20% Complete (primary)</span>
+                            </div>
+                            <div class="progress-bar progress-bar-warning" style="width: 25%">
+                                <span class="sr-only">10% Complete (warning)</span>
+                            </div>
+                            <div class="progress-bar progress-bar-danger" style="width: 10%">
+                                <span class="sr-only">10% Complete (danger)</span>
+                            </div>
+                            <div class="progress-bar progress-bar-info" style="width: 5%">
+                                <span class="sr-only">10% Complete (info)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer" id="edit-gang-modal-footer">
+    <button type="button" class="btn" id="edit-gang-modal-close-button" data-dismiss="modal">SEND!</button>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

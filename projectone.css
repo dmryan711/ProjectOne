@@ -57,7 +57,9 @@ input, textarea, select, label {
 
 #login-button{
   background-color: #ffff33; 
-  font-size: 16px;
+  font-size: 12px;
+  position: relative;
+  right:20px;
 }
 
 #signup-button{
@@ -70,7 +72,7 @@ input, textarea, select, label {
 }
 /*End Of Login CSS*/
 
-/*Home Page*/
+/*Home Page CSS*/
 #home-page{
   background-image: url("https://cdn12.picryl.com/photo/2016/12/31/graffiti-background-grunge-backgrounds-textures-047a21-1024.jpg");
   min-height: 100%;
@@ -79,21 +81,6 @@ input, textarea, select, label {
   background-size: cover;
   font-family: 'Rock Salt', cursive;
   text-align: center;
-}
-
-#profile-pic{
-  margin-top: 20px;
-  margin-right: 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 1px solid black;
-  border-radius: 100px;
-  width: 90px;
-}
-
-#profile-pic:hover {
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
 #home-page-create-gang-button{
@@ -248,6 +235,28 @@ input[type=text]:focus {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100px;
+  border-radius: 20px;
+}
+
+#pick-movie-button{
+  margin-top: 20px;
+  margin-right:;
+  background: #FFFF33; 
+  position: absolute;
+  top: 60px;
+  right: 600px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+#pick-band-button{
+  margin-top: 20px;
+  margin-right: 10px;
+  background: #FFFF33; 
+  position: absolute;
+  top: 30px;
+  right: 600px;
   width: 100px;
   border-radius: 20px;
 }
@@ -423,18 +432,6 @@ color: #ffff33;
 padding: 5px;
 background: red;
 color: white !important
-}
-
-/* Add media queries for smaller screens */
-@media screen and (max-width:720px) {
-.weekdays li, .days li {width: 13.1%;}
-}
-@media screen and (max-width: 420px) {
-.weekdays li, .days li {width: 12.5%;}
-.days li .active {padding: 2px;}
-}
-@media screen and (max-width: 290px) {
-.weekdays li, .days li {width: 12.2%;}
 }
 
 #suggestion-header{
