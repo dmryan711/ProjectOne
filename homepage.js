@@ -18,16 +18,59 @@ var config = {
   function loadGangsForUser(){
     var userId = firebase.auth().currentUser.uid;
    
-    return firebase.database().ref( '/'+GANG_BY_USERS+'/'+ userId ).once('value').then(function(snapshot) {
+     firebase.database().ref( '/'+GANG_BY_USERS+'/'+ userId ).once('value').then(function(snapshot) {
     var usersGangs = snapshot.val();
     for (key in usersGangs) {
         if (!usersGangs.hasOwnProperty(key)) continue;
-        console.log(key);
-        console.log(usersGangs[key].description);
+            console.log(usersGangs[key]);
+            addGangToPage(usersGangs[key]);
       }
-});
+    });
 }
 
+function addGangToPage(gangObject){
+
+
+
+    var $gangTitle = $("<h5></h5>");
+    $gangTitle.addClass("card-title");
+    $gangTitle.text(gangObject.name);
+
+    var $gangSubTitle = $("<h6></h6>");
+    $gangSubTitle.addClass("card-subtitle my-3");
+    $gangSubTitle.text(gangObject.description);
+
+    var $gangDate = $("<h6></h6>");
+    $gangDate.addClass("card-subtitle my-3");
+    $gangDate.text("Date: "+gangObject.date);
+
+    var $gangLocation = $("<h6></h6>");
+    $gangLocation.addClass("card-subtitle my-3");
+    $gangLocation.text("Location: "+gangObject.location);
+
+    var $gangTime = $("<h6></h6>");
+    $gangTime.addClass("card-subtitle my-3");
+    $gangTime.text("Time: "+gangObject.time);
+   
+    var $cardBody = $("<div></div>");
+    $cardBody.addClass("card-body");
+
+    var $card = $("<div></div>");
+    $card.addClass("card");
+    $card.attr("style","width: 100%");
+
+    $cardBody.append($gangTitle);
+    $cardBody.append($gangSubTitle);
+    $cardBody.append($gangLocation);
+    $cardBody.append($gangDate);
+    $cardBody.append($gangTime);
+    $card.append($cardBody);
+
+    $("#Gang-Header").append($card);
+}
+
+
+       
 
 
 
