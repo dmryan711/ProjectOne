@@ -40,6 +40,8 @@ input, textarea, select, label {
   font-family: 'Rock Salt', cursive;
   color: white;
   font-size: 16px;
+  position:relative;
+  width:100%;
 }
   
 .login-input, .login-input:focus {
@@ -61,10 +63,8 @@ input, textarea, select, label {
 }
 
 #signup-button{
-  background-color: #ffff33; 
-  font-size: 12px;
-  position: relative;
-  right:20px;
+  background-color: lightblue; 
+  font-size: 16px;
 }
 
 .lt-ie9 .login-input { 

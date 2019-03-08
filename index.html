@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <!--FireBase Script, No Scripts before this-->       
+        <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,32 +18,23 @@
             <img src="images/gangout.jpg" alt="gangout" id="logo"> 
     </div>
     <div class="flex-box">
-        <form class="login" onsubmit="window.location.href = 'Home-page.html'; return false" id="gangoutlogin">
-            <h1>LOGIN</h1>
-            <input type="email" name="email" class="login-input" placeholder="EMAIL ADDRESS" autofocus>
-            <input type="password" name="password" class="login-input" placeholder="PASSWORD">
-            <input type="submit" value="LOGIN" class="login" id="login-button">
-            <input type="submit" value="SIGNUP" class="login" id="signup-button">
-            <p class="login-help"><a href="#">FORGOT PASSWORD?</a></p>
+        <form class="login"  id="gangoutlogin">
+            <h1>LOG IN</h1>
+            <input type="email" name="email" class="login-input" id= "email-input" placeholder="EMAIL ADDRESS" autofocus>
+            <input type="password" name="password" class="login-input" id="password-input" placeholder="PASSWORD">
+            <input  name="user" class="login-input" id="user-name-input" placeholder="USER NAME">
+            <input type="submit" value="LOGIN" class="login-input" id="login-button">
+            <input type="submit" value="SIGNUP" class="login-input" id="signup-button">
+            
         </form>
     </div>
-    <!--FireBase Script, No Scripts before this-->       
-    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDrBXxGe_WLXw-VucpOf6z9aWRpNZWoPAg",
-        authDomain: "projectone-74ba1.firebaseapp.com",
-        databaseURL: "https://projectone-74ba1.firebaseio.com",
-        projectId: "projectone-74ba1",
-        storageBucket: "projectone-74ba1.appspot.com",
-        messagingSenderId: "143505066275"
-      };
-      firebase.initializeApp(config);
-    </script> 
+    
+
+   
+   
     <!--JQUERY--> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--APP SCRIPT-->
-     <script src="logic.js"></script>
+     <script src="login.js"></script>
 </body>
 </html>
