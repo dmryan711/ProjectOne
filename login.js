@@ -26,21 +26,24 @@ var config = {
     });
  
  
+
+
    $('#login-button').on("click",function(e){
-     e.preventDefault();
-     console.log("Login Button");
-     var email = $('#email-input').val();
-     var password = $('#password-input').val();
-     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-       // Handle Log In Errors here.
-       if(error){
-         var errorCode = error.code;
-         var errorMessage = error.message;
-         console.log(errorMessage);
-         //User does not have an account, create one for them
-       }
-     });
-   });
+    e.preventDefault();
+    console.log("Login Button");
+    var email = $('#email-input').val();
+    var password = $('#password-input').val();
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+      //Add user name to local storage
+      localStorage.setItem('userName',firebase.auth().currentUser.displayName);
+
+      //Move to next screen
+      window.location = "Home-page.html";
+
+    }).catch(function(error){
+      console.log(error.message);
+    });
+  });
 
 
    function createGangOutUser(email,displayName,password){
