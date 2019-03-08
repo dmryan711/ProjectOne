@@ -58,7 +58,6 @@ input, textarea, select, label {
 #login-button{
   background-color: #ffff33; 
   font-size: 12px;
-  position: relative;
   right:20px;
 }
 
@@ -153,7 +152,7 @@ input, textarea, select, label {
 
 /*Edit Gang Page*/
 #create-gang-page{
-  background-image: url("https://jennyleonard.files.wordpress.com/2012/06/pb153069.jpg");
+ background-image: url("https://jennyleonard.files.wordpress.com/2012/06/pb153069.jpg");
   min-height: 100%;
   min-width: 100%;
   background-repeat: no-repeat;

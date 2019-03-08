@@ -9,11 +9,31 @@ var config = {
     messagingSenderId: "143505066275"
   };
   firebase.initializeApp(config);
+  const GANG_BY_USERS = "Gangs_By_Users";
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    loadGangsForUser(user.uid);
+  });
+
+  function loadGangsForUser(){
+    var userId = firebase.auth().currentUser.uid;
+   
+    return firebase.database().ref( '/'+GANG_BY_USERS+'/'+ userId ).once('value').then(function(snapshot) {
+    var usersGangs = snapshot.val();
+    for (key in usersGangs) {
+        if (!usersGangs.hasOwnProperty(key)) continue;
+        console.log(key);
+        console.log(usersGangs[key].description);
+      }
+});
+}
+
+
 
 
 $(document).ready(function() {
     populateHomePageUI(localStorage.getItem('userName'));
-
+    
 
 $('#create-gang-modal-button').on("click",function(){
     var $modalTextElement = $('#search-bar-modal');
@@ -33,6 +53,8 @@ $('#create-gang-modal-button').on("click",function(){
 function populateHomePageUI(userName){
     $('#create-gang-user-name').text(userName);
   }
+ 
+
 
 $('#logout-button').on("click",function(){
     console.log("Sign Out");

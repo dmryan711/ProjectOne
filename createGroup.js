@@ -8,6 +8,8 @@ var config = {
     messagingSenderId: "143505066275"
   };
   firebase.initializeApp(config);
+  const GANGS = "Gangs";
+  const GANG_BY_USERS = "Gangs_By_Users";
 
 
 
@@ -30,7 +32,52 @@ var config = {
           // An error happened.
         });
       });
+
+    $('#save-gang-button').on("click",function(e){
+        e.preventDefault();
+        var date = $('#inputDate').val();
+        var time = $('#inputTime').val();
+        var location = $('#inputLocation').val();
+        var description = $('#inputDescription').val();
+        var name = localStorage.getItem('gangName');
+        var owner = firebase.auth().currentUser.uid
+        saveGangWith(date,time,location,description,name,owner);
+
+    });
       
     })
+
+    function saveGangWith(date,time,location,description,name,ownerId){
+        var gang = {
+            name:name,
+            date:date,
+            time:time,
+            location:location,
+            description: description,
+            ownerId:ownerId
+        }
+
+       var newGangKey = firebase.database().ref().child(GANGS).push().key;
+
+       var updates = {};
+        updates['/'+GANGS+'/' + newGangKey] = gang;
+        updates ['/'+GANG_BY_USERS+'/'+ ownerId + '/' + newGangKey] = gang;
+
+
+        firebase.database().ref().update(updates,function(error){
+            if(error){
+                console.log(error);
+            }else{
+                window.location = 'Home-page.html';
+            }
+
+        });
+
+        
+
+
+
+
+    }
 
  
