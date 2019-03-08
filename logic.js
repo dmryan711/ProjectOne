@@ -18,34 +18,42 @@ const GANGS = 'Gangs';
 
 
 //Firebase
-//Handle Account Status
-firebase.auth().onAuthStateChanged(user => {
-  if(user){
-    //Set up UI
-    console.log(user.email);
+// //Handle Account Status
+// firebase.auth().onAuthStateChanged(user => {
+//   console.log("auth changed");
+//   if(user && !user.displayName){
+//     //Set up UI
+//     console.log("User Name in auth changed" + user.displayName);
    
+//     if(window.location.href.indexOf("index.html") > -1){
+//       //Set the UID to local storage
+//       localStorage.setItem('UserId',user.uid);
 
-    if(window.location.href.indexOf("index.html") > -1){
-      window.location = 'Home-page.html'; //After successful login, user will be redirected to Home-page.html
-    }else if(window.location.href.indexOf("Home-page.html") > -1){
-      console.log("Here is the user name" +firebase.auth().currentUser.displayName)
-        populateUserUI(firebase.auth().currentUser.displayName);
-    }else if(window.location.href.indexOf("Create-Group.html") > -1){
-        populateGangUI(firebase.auth().currentUser.displayName);
-    }
-  }else{
-    if(window.location.href.indexOf("index.html")>-1){
-      console.log("do nothing");
-    }else{
-      window.location = 'index.html'; //After user is cleared , user will be redirected to index.html
-    }
+//       window.location = 'Home-page.html'; //After successful login, user will be redirected to Home-page.html
+//     }else if(window.location.href.indexOf("Home-page.html") > -1){
+//       console.log("Here is the user name" +firebase.auth().currentUser.displayName)
+//         populateUserUI(firebase.auth().currentUser.displayName);
+//     }else if(window.location.href.indexOf("Create-Group.html") > -1){
+//         populateGangUI(firebase.auth().currentUser.displayName);
+//     }
+//   }else{
+//     if(window.location.href.indexOf("index.html")>-1){
+//       console.log("do nothing");
+//     }else{
+//       window.location = 'index.html'; //After user is cleared , user will be redirected to index.html
+//     }
     
-  }
-});
+//   }
+// });
 //Home-page START
 var groupID;
 
 $(document).ready(function() {
+
+  if(window.location.href.indexOf("Create-Group.html") > -1){
+    //var currentUser = firebase.auth().currentUser.uid;
+    console.log(localStorage.getItem('UserId'));
+  }
 //Login Start
    $('#signup-button').on("click",function(e){
      e.preventDefault();
@@ -53,6 +61,7 @@ $(document).ready(function() {
      var password = $('#password-input').val();
      var userName = $('#user-name-input').val();
      if(userName != ""){
+       console.log("User Name going in"+ userName);
       createGangOutUser(email,userName,password);
      }else{
        console.log("Enter a user name");
@@ -78,6 +87,9 @@ $(document).ready(function() {
 
   $('#logout-button').on("click",function(){
     console.log("Sign Out");
+    localStorage.removeItem('UserId');
+    localStorage.removeItem('gangName');
+
 
     firebase.auth().signOut().then(function() {
       // Sign-out successful.
@@ -170,10 +182,12 @@ function createGangWithName(gangNameString){
  function createGangOutUser(email,displayName,password){
     var user = null;
     firebase.auth().createUserWithEmailAndPassword(email, password)
+      
     .then(function () {
+      console.log("Adding User Name");
       user = firebase.auth().currentUser;
-    })
-    .then(function () {
+      console.log(user);
+      console.log(displayName);
       user.updateProfile({
         displayName: displayName
       });
@@ -181,7 +195,6 @@ function createGangWithName(gangNameString){
     .catch(function(error) {
       console.log(error.message);
     });
-   // console.log('Validation link was sent to ' + email + '.');
   }
 
   function populateUserUI(userName){
