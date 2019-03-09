@@ -151,7 +151,7 @@ function createOtherGangCard(gangObject){
   $card.attr("style","width: 100%");
 
   var $joinGang = $("<button></button>");
-    $joinGang.addClass("btn btn-primary join-gang");
+    $joinGang.addClass("btn btn-dark join-gang");
     $joinGang.text("Join Gang");
 
   $cardBody.append($gangTitle);

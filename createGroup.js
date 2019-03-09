@@ -116,7 +116,6 @@ var config = {
       $(artist).text(string);
       artistHolder.append(artist);
       //append div to container
-      $("#container2").append(artistHolder);
     }
     
     //Second API Call
@@ -135,8 +134,8 @@ var config = {
         parseYelp(result);
       });
       function parseYelp (result) {
-        $('#inputDate').val('07/11/2019');
-        $('#inputTime').val('12:30AM');
+        $('#inputDate').val('Open Every Day');
+        $('#inputTime').val('12:00PM - 4:00AM');
         for(key in result) {
           if(key == 'data') {
             var data = result[key];
