@@ -241,7 +241,7 @@ input[type=text]:focus {
 #button{
   background: #ffff33;
   position: absolute;
-  top: 600px;
+  top: 800px;
   right: 750px;
   border-radius: 20px
 }
@@ -249,7 +249,7 @@ input[type=text]:focus {
 #button2{
   background: #ffff33;
   position: absolute;
-  top: 600px;
+  top: 800px;
   right: 430px;
   border-radius: 20px;
 }

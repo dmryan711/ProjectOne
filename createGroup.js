@@ -143,8 +143,8 @@ var config = {
             for(key in data) {
               if(key == 'businesses'){
                 var businesses = data[key];
-                console.log(businesses[0].name);
-                var venue = businesses[0]; //Get name here
+                console.log(Math.floor(Math.random() * 20));
+                var venue = businesses[Math.floor(Math.random() * 20)]; //Get name here
                 $('#inputDescription').val(venue.name);
                 for(key in venue) {
                   if(key == 'location') {
@@ -154,8 +154,6 @@ var config = {
                     $('#inputLocation').val(location);
                     //var description = 'A COOL PLACE IN ' + venueLocation['city'];
                     console.log(location);
-                    console.log(description);
-
                   }
                 }
               }
