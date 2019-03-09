@@ -132,7 +132,34 @@ var config = {
       instance.get("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=live&music&venues&location=brooklyn")
         .then(function (result) {
         console.log(result);
-        document.getElementById('container3').innerHTML = result.data.businesses[Math.floor((Math.random() * 20) + 1)].name;
+        parseYelp(result);
       });
-    });
+      function parseYelp (result) {
+        $('#inputDate').val('07/11/2019');
+        $('#inputTime').val('12:30AM');
+        for(key in result) {
+          if(key == 'data') {
+            var data = result[key];
+            for(key in data) {
+              if(key == 'businesses'){
+                var businesses = data[key];
+                console.log(Math.floor(Math.random() * 20));
+                var venue = businesses[Math.floor(Math.random() * 20)]; //Get name here
+                $('#inputDescription').val(venue.name);
+                for(key in venue) {
+                  if(key == 'location') {
+                    var venueLocation = venue[key];
+                    console.log(venueLocation);
+                    var location = venueLocation['address1'];
+                    $('#inputLocation').val(location);
+                    //var description = 'A COOL PLACE IN ' + venueLocation['city'];
+                    console.log(location);
+                  }
+                }
+              }
+            }
+        }
+      }
+    }
+  });
     
