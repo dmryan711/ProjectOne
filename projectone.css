@@ -238,25 +238,35 @@ input[type=text]:focus {
   border-radius: 20px;
 }
 
-#pick-movie-button{
-  margin-top: 20px;
-  margin-right:;
-  background: #FFFF33; 
+#button{
+  background: #ffff33;
   position: absolute;
-  top: 60px;
-  right: 600px;
-  width: 100px;
+  top: 600px;
+  right: 750px;
+  border-radius: 20px
+}
+
+#button2{
+  background: #ffff33;
+  position: absolute;
+  top: 600px;
+  right: 430px;
   border-radius: 20px;
 }
 
-#pick-band-button{
-  margin-top: 20px;
-  margin-right: 10px;
-  background: #FFFF33; 
-  position: absolute;
-  top: 30px;
-  right: 600px;
-  width: 100px;
+#container2{
+  color: white;
+  font-size: 40px;
+}
+
+#container3{
+  color: white;
+  font-size: 40px;
+}
+
+#save-gang-button{
+  background-color: #FFFF33;
+  color:black;
   border-radius: 20px;
 }
 /*Edit Gang Modal*/
